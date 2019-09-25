@@ -1,0 +1,24 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity traffic_light is 
+	port (mode, clk : in std_logic_vector (1 downto 0);
+              red, green, yellow : out std_logic);
+end traffic_light
+
+architecture traffic_light_behavior of traffic_light is
+	variable r, g, y : std_logic;
+begin
+	process (mode, clk)
+	begin
+		if (rising_edge (clk) and mode = "00") then
+			r := "1"
+			red <= r
+			report "Red = " & integer'image(red);
+	end process
+end traffic_light_behavior
+
+			
+			
