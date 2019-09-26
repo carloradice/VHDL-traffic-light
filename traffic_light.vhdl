@@ -15,9 +15,9 @@ entity counter is
 port (
 	clk 			: in std_logic;
 	nRst 			: in std_logic;
-	milliseconds 	: out integer;
+	milliseconds	: out integer;
 	seconds 		: out integer;
-);
+);	
 end counter;
 
 architecture traffic_light_behavior of traffic_light is
@@ -46,9 +46,20 @@ begin
 		if rising_edge (clk) then
 			-- if the negative reset signal is active
 			if nRst = '0' then 
+				Ticks <= 0;
+				milliseconds <= 0;
+				seconds <= 0;
 			else
+				-- True one every millisecond
 				if Ticks = ClockFrequency - 1
 					Ticks <= 0;
+					-- True every second
+					if milliseconds = 1000 then
+						milliseconds <= 0;
+						seconds <= seconds + 1;
+					else
+						milliseconds <- milliseconds + 1;
+					end if;
 				else 
 					Ticks <= Ticks + 1;
 				end if; 
