@@ -2,6 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 entity traffic_light is 
 port (
@@ -11,14 +12,21 @@ port (
 );
 end traffic_light;
 
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
 entity counter is 
+generic (ClockFrequencyHz : integer);
 port (
-	clk 			: in std_logic;
+	clk				: in std_logic;
 	nRst 			: in std_logic;
-	milliseconds	: out integer;
-	seconds 		: out integer;
-);	
-end counter;
+	milliseconds	: inout integer;
+	seconds 		: inout integer
+);
+end counter;	
 
 architecture traffic_light_behavior of traffic_light is
 begin
@@ -34,8 +42,8 @@ begin
 			
 		end if;
 	end process;
-end traffic_light_behavior;		
-			
+end architecture;	
+
 architecture counter_behavior of counter is
 	-- Signal for counting clock periods
 	signal Ticks : integer;
@@ -50,18 +58,22 @@ begin
 				milliseconds <= 0;
 				seconds <= 0;
 			else
-				-- True one every millisecond
-				if Ticks = ClockFrequency - 1
+				report "reset = 1";
+				-- True one every 10 milliseconds
+				if Ticks = ClockFrequencyHz - 10 then
+					report "tick = 0";
 					Ticks <= 0;
 					-- True every second
-					if milliseconds = 1000 then
+					if milliseconds = 900 then
+						report "aggiorno i secondi";
 						milliseconds <= 0;
 						seconds <= seconds + 1;
 					else
-						milliseconds <- milliseconds + 1;
+						report "aggiorno i millisecondi";
+						milliseconds <= milliseconds + 100;
 					end if;
 				else 
-					Ticks <= Ticks + 1;
+					Ticks <= Ticks + 10;
 				end if; 
 			end if;
 		end if;
