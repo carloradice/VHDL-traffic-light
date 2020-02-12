@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Modeltech_pe_edu_10.4a/examples
 Ecounter
-Z0 w1581499620
+Z0 w1581500635
 Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
@@ -24,9 +24,9 @@ VWDnBVXbH^Aj^;]J^1ladk2
 !s100 D>KhfcRi9<P=lF8XVme]_0
 Z9 OP;C;10.4a;61
 32
-Z10 !s110 1581499625
+Z10 !s110 1581500640
 !i10b 1
-Z11 !s108 1581499625.000000
+Z11 !s108 1581500640.000000
 Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/utente05/Documents/VHDL_traffic_light/traffic_light.vhdl|
 Z13 !s107 C:/Users/utente05/Documents/VHDL_traffic_light/traffic_light.vhdl|
 !i113 1
@@ -39,10 +39,10 @@ R3
 R4
 R5
 Z16 DEx4 work 7 counter 0 22 WDnBVXbH^Aj^;]J^1ladk2
-l142
-L138
-VWoIbo6lUd[b_QGzN663a11
-!s100 ea05bjDYVNbkGMW:PG`^D2
+l144
+L140
+VVg`h9Fd5ijNRB[dXb3[HG2
+!s100 6aLF]c97QhdJ06^NU1a`j2
 R9
 32
 R10
@@ -86,8 +86,8 @@ R5
 Z17 DEx4 work 13 traffic_light 0 22 hK8I7InC]n==bGnVS7LKB3
 l39
 L38
-V14X;KcRf3[L98zhiO8];c3
-!s100 m8z7L761G6BzkKihL^G[j2
+VEX2b10=W?_WF_EL5hRe1J2
+!s100 Ck9mSVzR4GjSMoin^LdTj3
 R9
 32
 R10

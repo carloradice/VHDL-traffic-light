@@ -39,7 +39,7 @@ architecture traffic_light_behavior of traffic_light is
 begin
 
 	mode <= "00" when falling_edge(nRst);
-	
+
 	process (clk) is
 	begin
 		if (rising_edge(clk)) then
@@ -55,6 +55,8 @@ begin
 					if (mod_Maintenance = "00") then
 						if (seconds = 0 and milliseconds < 500) then
 							red <= '1';
+							yellow <= '0';
+							green <= '0';
 						else
 							if (seconds < 1) then
 								red <= '0';
