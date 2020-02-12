@@ -9,11 +9,17 @@ end entity;
 architecture traffic_light_tb_behavior of traffic_light_tb is
 	constant ClockFrequencyHz : integer := 100; -- 100 Hz
    	constant ClockPeriod      : time := 1000 ms / ClockFrequencyHz;
-	
-	signal Clk     : std_logic := '1';
-    signal nRst    : std_logic := '0';
-    signal milliseconds : integer;
-    signal seconds : integer;
+	signal Clk		: std_logic := '1';
+	signal mode		: std_logic_vector (1 downto 0) := "10";
+	signal red		: std_logic := '0';
+	signal green	: std_logic := '0';
+	signal yellow	: std_logic := '0';
+    signal nRst		: std_logic := '0';
+    signal milliseconds : integer := 0;
+    signal seconds		: integer := 0;
+	signal enable		: std_logic := '1';
+	signal nRstTimer	: std_logic := '0';
+	signal mod_Maintenance : std_logic_vector (1 downto 0) := "00";
 begin
  
     -- The Device Under Test (DUT)
@@ -23,8 +29,23 @@ begin
         Clk     => Clk,
         nRst    => nRst,
         milliseconds => milliseconds,
-        seconds => seconds);
+        seconds => seconds,
+		nRstTimer => nRstTimer);
  
+	i_traffic_light_behavior : entity work.traffic_light
+	port map (
+		Clk     => Clk,
+		mode	=> mode,
+		red		=> red,
+		green	=> green,
+		yellow	=> yellow,
+        nRst    => nRst,
+        milliseconds => milliseconds,
+        seconds => seconds,
+		enable => enable,
+		nRstTimer => nRstTimer,
+		mod_Maintenance => mod_Maintenance);
+
     -- Process for generating the clock
     Clk <= not Clk after ClockPeriod / 2;
  
@@ -32,10 +53,8 @@ begin
     process is
     begin
         wait until rising_edge(Clk);
- 
         -- Take the DUT out of reset
         nRst <= '1';
- 
         wait;
     end process;
  

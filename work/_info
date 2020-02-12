@@ -1,0 +1,146 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Modeltech_pe_edu_10.4a/examples
+Ecounter
+Z0 w1581499620
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z6 dC:/Users/utente05/Documents/VHDL_traffic_light
+Z7 8C:/Users/utente05/Documents/VHDL_traffic_light/traffic_light.vhdl
+Z8 FC:/Users/utente05/Documents/VHDL_traffic_light/traffic_light.vhdl
+l0
+L27
+VWDnBVXbH^Aj^;]J^1ladk2
+!s100 D>KhfcRi9<P=lF8XVme]_0
+Z9 OP;C;10.4a;61
+32
+Z10 !s110 1581499625
+!i10b 1
+Z11 !s108 1581499625.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/utente05/Documents/VHDL_traffic_light/traffic_light.vhdl|
+Z13 !s107 C:/Users/utente05/Documents/VHDL_traffic_light/traffic_light.vhdl|
+!i113 1
+Z14 o-work work -2002 -explicit -O0
+Z15 tExplicit 1
+Acounter_behavior
+R1
+R2
+R3
+R4
+R5
+Z16 DEx4 work 7 counter 0 22 WDnBVXbH^Aj^;]J^1ladk2
+l142
+L138
+VWoIbo6lUd[b_QGzN663a11
+!s100 ea05bjDYVNbkGMW:PG`^D2
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+R15
+Etraffic_light
+R0
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+l0
+L7
+VhK8I7InC]n==bGnVS7LKB3
+!s100 FJVHH]C>_J`?a?V@8Rdo;2
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+R15
+Atraffic_light_behavior
+R1
+R2
+R3
+R4
+R5
+Z17 DEx4 work 13 traffic_light 0 22 hK8I7InC]n==bGnVS7LKB3
+l39
+L38
+V14X;KcRf3[L98zhiO8];c3
+!s100 m8z7L761G6BzkKihL^G[j2
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+R15
+Etraffic_light_tb
+Z18 w1581499368
+R2
+R3
+R4
+R5
+R6
+Z19 8C:/Users/utente05/Documents/VHDL_traffic_light/traffic_light_tb.vhdl
+Z20 FC:/Users/utente05/Documents/VHDL_traffic_light/traffic_light_tb.vhdl
+l0
+L6
+V?FEi@jZgLP7??5Ic3i?^?1
+!s100 FI[m>9IJTNNd_AYIa?DC?0
+R9
+32
+R10
+!i10b 1
+R11
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/utente05/Documents/VHDL_traffic_light/traffic_light_tb.vhdl|
+Z22 !s107 C:/Users/utente05/Documents/VHDL_traffic_light/traffic_light_tb.vhdl|
+!i113 1
+R14
+R15
+Atraffic_light_tb_behavior
+R17
+R1
+R16
+R2
+R3
+R4
+R5
+Z23 DEx4 work 16 traffic_light_tb 0 22 ?FEi@jZgLP7??5Ic3i?^?1
+l23
+L9
+Z24 VB5aFA0>>f77`^RR9T3z;k1
+Z25 !s100 ooHeA8O:h3U8E>97;^UF;2
+R9
+32
+R10
+!i10b 1
+R11
+R21
+R22
+!i113 1
+R14
+R15
