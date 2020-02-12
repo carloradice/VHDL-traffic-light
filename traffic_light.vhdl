@@ -7,14 +7,14 @@ use IEEE.NUMERIC_STD.ALL;
 entity traffic_light is 
 port (
 	clk 				: in std_logic;
-    mode 				: inout std_logic_vector (1 downto 0) := "10";
+    mode 				: inout std_logic_vector (1 downto 0) := "00";
     red, green, yellow 	: out std_logic := '0';
 	nRst 			: in std_logic;
 	milliseconds	: in integer;
 	seconds 		: in integer;
 	enable			: in std_logic;
 	nRstTimer		: inout std_logic := '0';
-	mod_Maintenance : in std_logic_vector (1 downto 0) := "00"
+	mod_Maintenance : in std_logic_vector (1 downto 0)
 );
 end traffic_light;
 
@@ -74,6 +74,8 @@ begin
 					else
 						if (seconds < 6) then
 							red <= '1';
+							yellow <= '0';
+							green <= '0';
 						else
 							if ((seconds < 9 and mod_Maintenance = "01") or (seconds < 12 and mod_Maintenance = "10") or (seconds < 18 and mod_Maintenance = "11")) then
 								-- in base alla modalita la durata del giallo cambia
@@ -91,6 +93,8 @@ begin
 						report "standby";
 						if (seconds < 1) then
 							yellow <= '1';
+							red <= '0';
+							green <= '0';
 						else
 							if (seconds < 3) then
 								yellow <= '0';
@@ -104,6 +108,8 @@ begin
 							report "nominal";
 							if (seconds < 3) then
 								red <= '1';
+								yellow <= '0';
+								green <= '0';
 							else
 								red <= '0';
 								if (seconds < 8) then
@@ -117,12 +123,6 @@ begin
 									nRstTimer <= '1';
 								end if;
 							end if;
-							
-							--timeprova := timeprova + 1;
-							--report "tempo " & integer'image(timeprova);
-							--r := '1';
-							--red <= r;
-							--report "red = " & std_logic'image(r);
 						end if;			
 					end if;
 				end if;
@@ -132,6 +132,7 @@ begin
 				red <= '0';
 				yellow <= '0';
 				green <= '0';
+				nRstTimer <= '1';
 			end if;
 		end if;
 	end process;
@@ -139,7 +140,7 @@ end architecture;
 
 architecture counter_behavior of counter is
 	-- Signal for counting clock periods
-	signal Ticks : integer;
+	signal Ticks : integer := 0;
 
 begin 
 	process (clk) is 
