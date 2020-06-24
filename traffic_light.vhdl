@@ -7,7 +7,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity traffic_light is 
 port (
 	clk 				: in std_logic;
-    mode 				: inout std_logic_vector (1 downto 0) := "00";
+    mode 				: inout std_logic_vector (1 downto 0) := "10";
     red, green, yellow 	: out std_logic := '0';
 	nRst 			: in std_logic;
 	milliseconds	: in integer;
@@ -68,6 +68,7 @@ begin
 								else
 									nRstTimer <= '1';
 									green <= '0';
+									red <= '1';
 								end if;
 							end if;
 						end if;
@@ -84,6 +85,7 @@ begin
 							else
 								nRstTimer <= '1';
 								yellow <= '0';
+								red <= '1';
 							end if;
 						end if;
 					end if;
@@ -100,6 +102,7 @@ begin
 								yellow <= '0';
 							else
 								nRstTimer <= '1';
+								yellow <= '1';
 							end if;
 						end if;
 					else
@@ -121,6 +124,7 @@ begin
 									green <= '0';
 									yellow <= '0';					
 									nRstTimer <= '1';
+									red <= '1';
 								end if;
 							end if;
 						end if;			
